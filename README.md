@@ -1,5 +1,7 @@
 # docker-12c-ee-dbca
 
+You need to have Docker installed on your machine. https://www.docker.com/
+
 For docker images go to: https://hub.docker.com/r/andybpunkt/oracle-12/
 
 Pull request with Docker: docker pull andybpunkt/oracle-12
