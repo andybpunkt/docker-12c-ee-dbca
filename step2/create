@@ -1,0 +1,21 @@
+#!/bin/bash
+echo "Setting up environment variables"
+
+cat >> /home/oracle/.bash_profile <<EOF
+ORACLE_BASE=/u01/app/oracle
+export ORACLE_BASE
+
+ORACLE_SID=ORCL
+export ORACLE_SID
+
+ORACLE_HOME=$ORACLE_BASE/product/12.1.0/dbhome_1
+export ORACLE_HOME
+
+PATH=$ORACLE_HOME/bin:$PATH
+export PATH
+EOF
+
+echo ""
+
+date
+echo "Create is done;"
