@@ -1,17 +1,17 @@
 # docker-12c-ee-dbca
 
-Ein fertiges Image gibt es auf https://hub.docker.com/r/andybpunkt/oracle-12/
+For docker images go to: https://hub.docker.com/r/andybpunkt/oracle-12/
 
-Pull Request mit Docker: docker pull andybpunkt/oracle-12
+Pull request with Docker: docker pull andybpunkt/oracle-12
 
-In Ordner Step1 müssen die Oracle Database 12c EE Installationdateien 
-'linuxamd64_12102_database_1of2.zip' und 'linuxamd64_12102_database_2of2.zip' für Linux gespeichert werden:
+Save the Oracle Database 12c EE installation files 'linuxamd64_12102_database_1of2.zip' 
+and 'linuxamd64_12102_database_2of2.zip' in directory Step1:
 
 http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html
 
-Befehle nacheinander in der Console eingeben (z.B. ConEmu ist sehr angenehm zu bedienen):
+Execute the following commands in a console (e.g. ConEmu is easy to use):
 
-- cd /Ordnerpfad
+- cd /directory of checkedout repository
 
 - docker build -t oracle-12c:step1 step1
 
@@ -19,9 +19,9 @@ Befehle nacheinander in der Console eingeben (z.B. ConEmu ist sehr angenehm zu b
 
 - /tmp/install/install
 
-Warten bis Successfully Setup Software kommt! Dauert einige Minuten.
+Wait for Successfully Setup Software!Takes several minutes.
 
-- <enter>-drücken
+- press-<enter>
 
 - exit
 
@@ -39,7 +39,7 @@ Warten bis Successfully Setup Software kommt! Dauert einige Minuten.
 
 - dbca -silent -createDatabase -templateName General_Purpose.dbc  -gdbname ORCL -sid ORCL -responseFile ./db_install.rsp  -characterSet AL32UTF8  -sysPassword admin  -systemPassword admin  -createAsContainerDatabase true  -numberOfPDBs 1  -pdbName pdb_tacodb  -pdbAdminPassword admin  -databaseType MULTIPURPOSE  -automaticMemoryManagement false  -storageType FS  -ignorePreReqs
 
-Warten! Dauert einige Minuten.
+Wait again several minutes.
 
 - 2x exit
 
@@ -47,20 +47,17 @@ Warten! Dauert einige Minuten.
 
 - docker build -t oracle-12c step3
 ---------------------------------------------------------------------------
-Image wurde erstellt! Glückwunsch
+Image has been created! Congrats
 
-Als nächstes Datenbank starten:
+Now start the database:
 
 - docker run --shm-size=4g -p 1521:1521 -ti --name fresh_db oracle-12c:latest /bin/bash
 
 - /tmp/start
 
 
-Um eine neue Shell auf dem Container aufzubauen:
+To open a console on the docker image: docker exec -it fresh_db bash
 
-- docker exec -it fresh_db bash
+'docker images' returns all images you created. You can create a new image upon an existing one, if you want to make some changes. 
 
-'docker images' gibt alle erstellten images zurück. Sie bauen alle aufeinander auf. 
-Man kann aber auch ein neues Image aus einem Zwischenschritt erzeugen, falls man Änderungen einfügen möchte. 
-
-'docker ps -a' gibt alle erzeugen Container zurück. Mit 'docker start "container ID oder Tag"' startet der container.
+'docker ps -a' returns all images containers. 'docker start "container ID orTag"' starts a container.
