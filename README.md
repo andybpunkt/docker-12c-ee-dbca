@@ -5,7 +5,7 @@ Ein fertiges Image gibt es auf https://hub.docker.com/r/andybpunkt/oracle-12/
 Pull Request mit Docker: docker pull andybpunkt/oracle-12
 
 In Ordner Step1 müssen die Oracle Database 12c EE Installationdateien 
-linuxamd64_12102_database_1of2.zip und linuxamd64_12102_database_2of2.zip für Linux gespeichert werden:
+'linuxamd64_12102_database_1of2.zip' und 'linuxamd64_12102_database_2of2.zip' für Linux gespeichert werden:
 
 http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html
 
