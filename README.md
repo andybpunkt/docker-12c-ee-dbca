@@ -2,8 +2,6 @@
 
 You need to have Docker installed on your machine. https://www.docker.com/
 
-Pull request with Docker: docker pull andybpunkt/oracle-12:fresh_db
-
 Save the Oracle Database 12c EE installation files 'linuxamd64_12102_database_1of2.zip' 
 and 'linuxamd64_12102_database_2of2.zip' in directory Step1:
 
