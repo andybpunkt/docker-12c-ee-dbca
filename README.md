@@ -23,7 +23,7 @@ Execute the following commands in a console (e.g. ConEmu is easy to use):
 
 Wait for Successfully Setup Software!Takes several minutes.
 
-- press-<enter>
+- press enter
 
 - exit
 
