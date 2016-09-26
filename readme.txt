@@ -47,7 +47,7 @@ Now start the database:
 
 - docker run --shm-size=4g -p 1521:1521 -ti --name fresh_db oracle-12c:latest /bin/bash
 
-- /tmp/start
+- /opt/oracle/bin/start
 
 
 To open a console on the docker image: docker exec -it fresh_db bash
