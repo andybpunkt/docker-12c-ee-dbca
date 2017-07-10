@@ -41,8 +41,8 @@ Wait again several minutes.
     $> exit
     $> docker commit step2 oracle-12c:created
     $> docker build -t oracle-12c step3
-    ---------------------------------------------------------------------------
-    Image has been created! Congrats
+
+Image has been created, congrats!
 
 Now start the database:
 
