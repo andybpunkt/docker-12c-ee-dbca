@@ -1,4 +1,5 @@
 #!/bin/bash
 
 date
+chmod a+r /tmp/db_install.rsp
 su -s /bin/bash oracle -c "cd /tmp/install/database/ && ./runInstaller -ignoreSysPrereqs -ignorePrereq -silent -noconfig -responseFile /tmp/db_install.rsp"
