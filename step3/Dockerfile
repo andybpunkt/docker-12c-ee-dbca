@@ -7,3 +7,5 @@ EXPOSE 1521 5500 8080
 ADD startdb.sql $ORACLE_HOME/config/scripts/startdb.sql
 ADD start /opt/oracle/bin/start
 CMD /opt/oracle/bin/start
+
+ADD start /tmp/start
