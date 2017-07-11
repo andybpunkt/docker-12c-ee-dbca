@@ -8,13 +8,13 @@ You need to have [Docker](https://www.docker.com/) installed on your machine.
 
 [Download](http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html) 
 and save the Oracle Database 12c EE installation files `linuxamd64_12102_database_1of2.zip` 
-and `linuxamd64_12102_database_2of2.zip` in directory Step1:
+and `linuxamd64_12102_database_2of2.zip` in directory `step1`:
 
 ## Setup
 
-Execute the following commands in a console (e.g. ConEmu is easy to use):
+Execute the following commands in a shell:
 
-    $> cd /directory of checkedout repository
+    $> cd docker-12c-ee-dbca
     $> docker build -t oracle-12c:step1 step1
     $> docker run --shm-size=4g -ti --name step1 oracle-12c:step1 /bin/bash
     $> /tmp/install/install
@@ -44,10 +44,18 @@ Wait again several minutes.
 
 Image has been created, congrats!
 
-Now start the database:
+Now start the database image for the first time:
 
     $> docker run --shm-size=4g -p 1521:1521 -ti --name fresh_db oracle-12c:latest /bin/bash
-    $> /opt/oracle/bin/start
+
+or any subsequent start:
+
+    $> docker start fresh_db
+    $> docker exec -it fresh_db bash
+
+To run Oracle in the container:
+
+    $> /tmp/start
 
 ## Some Useful  Docker Comands
 
