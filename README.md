@@ -29,11 +29,26 @@ Wait for Successfully Setup Software. Takes several minutes.
     $> /tmp/create
     $> su - oracle 
     $> cd /tmp/
-    $> dbca -silent -createDatabase -templateName General_Purpose.dbc \
-       -gdbname ORCL -sid ORCL -responseFile ./db_install.rsp  -characterSet AL32UTF8  \
-       -sysPassword admin  -systemPassword admin  -createAsContainerDatabase true  \
-       -numberOfPDBs 1  -pdbName pdb_orcldb  -pdbAdminPassword admin  -databaseType MULTIPURPOSE  \
-       -automaticMemoryManagement false  -storageType FS  -ignorePreReqs
+
+Use your custom name for your pluggable database [YOUR_PDB_NAME]:
+
+    $> dbca -silent \
+       -createDatabase \
+       -templateName General_Purpose.dbc \
+       -gdbname ORCL \
+       -sid ORCL \
+       -responseFile ./db_install.rsp  \
+       -characterSet AL32UTF8  \
+       -sysPassword admin  \
+       -systemPassword admin  \
+       -createAsContainerDatabase true  \
+       -numberOfPDBs 1 \
+       -pdbName [YOUR_PDB_NAME] \
+       -pdbAdminPassword admin \
+       -databaseType MULTIPURPOSE  \
+       -automaticMemoryManagement false \
+       -storageType FS \
+       -ignorePreReqs
 
 Wait again several minutes.
 
